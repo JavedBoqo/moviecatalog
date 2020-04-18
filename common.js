@@ -34,7 +34,7 @@ const makeGenreCombinations = (data) => {
         iter(data.length); 
         
         result.forEach(com =>{
-            if(com.length == 2) combinations.push(com.join('","'))
+            if(com.length == 2) combinations.push(com.join(','))
         })
     } else combinations=data;
     

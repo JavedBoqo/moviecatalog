@@ -1,7 +1,8 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 // Importing Routes
-const movie = require("./routes/movie");
+const addMovieRoute = require("./routes/addMovie");
+const getMovieRoute = require("./routes/getMovie");
 const app = express();
 
 app.use(bodyParser.json({ limit: "50mb" }));
@@ -12,8 +13,9 @@ app.use((req, res, next)=> {
 });
 
 // Add Routes
-app.get("/", movie);
-app.use("/movie", movie);
+// app.get("/", movie);
+app.use("/movie", addMovieRoute);
+app.use("/movie", getMovieRoute);
 
 // catch 404 and forward to error handler
 app.use((req, res, next)=> {
